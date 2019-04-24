@@ -18,12 +18,12 @@
 01:4000 s__CODE_7
 00:C000 .OAM
 00:C0A0 s__DATA
-00:C3B2 s__BSS
-00:C40D s__HEAP
-00:C40D s__BSEG
-00:C40D s__ISEG
-00:C40D s__XSEG
-00:C40D s__OVERLAY
+00:C3B3 s__BSS
+00:C40E s__HEAP
+00:C40E s__BSEG
+00:C40E s__ISEG
+00:C40E s__XSEG
+00:C40E s__OVERLAY
 00:E000 .STACK
 00:FF80 .refresh_OAM
 ; Area: _CODE
@@ -266,24 +266,24 @@
 00:C3A8 _music_tracks
 00:C3AC _script_variables
 ; Area: _BSS
-00:C3B2 __cpu
-00:C3B3 .mode
-00:C3B4 __io_out
-00:C3B5 __io_in
-00:C3B6 __io_status
-00:C3B7 .vbl_done
-00:C3B8 __current_bank
-00:C3B9 _sys_time
-00:C3B9 .sys_time
-00:C3BB .int_0x40
-00:C3CB .int_0x48
-00:C3DB .int_0x50
-00:C3EB .int_0x58
-00:C3FB .int_0x60
-00:C40B .randhi
-00:C40C .randlo
+00:C3B3 __cpu
+00:C3B4 .mode
+00:C3B5 __io_out
+00:C3B6 __io_in
+00:C3B7 __io_status
+00:C3B8 .vbl_done
+00:C3B9 __current_bank
+00:C3BA _sys_time
+00:C3BA .sys_time
+00:C3BC .int_0x40
+00:C3CC .int_0x48
+00:C3DC .int_0x50
+00:C3EC .int_0x58
+00:C3FC .int_0x60
+00:C40C .randhi
+00:C40D .randlo
 ; Area: _HEAP
-00:C40D _malloc_heap_start
+00:C40E _malloc_heap_start
 ; Area: _OVERLAY
 ; Area: _ISEG
 ; Area: _BSEG
@@ -399,4 +399,4 @@
 01:4030 _sprite_bank_ptrs
 01:4057 _scene_bank_ptrs
 01:407B _string_bank_ptrs
-01:40D2 _music_banks
+01:40D8 _music_banks

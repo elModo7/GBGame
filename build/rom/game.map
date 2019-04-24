@@ -17,12 +17,12 @@ AREA .  .ABS.
 		l__LIT	0000
 		l__GSINITTAIL	0001
 		l__BSS	005B
-		l__CODE_5	00D4
+		l__CODE_5	00DA
 		l__HEADER	01E1
 		s__CODE	0200
 		l__HOME	0254
 		l__BASE	0266
-		l__DATA	0312
+		l__DATA	0313
 		l__GSINIT	03B4
 		l__CODE_1	0671
 		l__CODE	1312
@@ -34,8 +34,8 @@ AREA .  .ABS.
 		s__GSINITTAIL	1D80
 		s__GSFINAL	1D81
 		l__CODE_3	2006
-		l__CODE_7	274C
-		l__CODE_6	3CD2
+		l__CODE_7	2754
+		l__CODE_6	3D56
 		s__CODE_1	4000
 		s__CODE_3	4000
 		s__CODE_4	4000
@@ -44,12 +44,12 @@ AREA .  .ABS.
 		s__CODE_7	4000
 		.OAM	C000
 		s__DATA	C0A0
-		s__BSS	C3B2
-		s__HEAP	C40D
-		s__BSEG	C40D
-		s__ISEG	C40D
-		s__XSEG	C40D
-		s__OVERLAY	C40D
+		s__BSS	C3B3
+		s__HEAP	C40E
+		s__BSEG	C40E
+		s__ISEG	C40E
+		s__XSEG	C40E
+		s__OVERLAY	C40E
 		.STACK	E000
 		.refresh_OAM	FF80
 AREA _CODE
@@ -239,7 +239,7 @@ AREA _GSFINAL
 AREA _DATA
 	RADIX HEX
 	BASE C0A0
-	SIZE 0312
+	SIZE 0313
 	ATTRIB REL CON
 	GLOBALS
 		_bank_stack	C0A0
@@ -335,51 +335,51 @@ AREA _DATA
 		_script_variables	C3AC
 AREA _BSS
 	RADIX HEX
-	BASE C3B2
+	BASE C3B3
 	SIZE 005B
 	ATTRIB REL CON
 	GLOBALS
-		__cpu	C3B2
-		.mode	C3B3
-		__io_out	C3B4
-		__io_in	C3B5
-		__io_status	C3B6
-		.vbl_done	C3B7
-		__current_bank	C3B8
-		_sys_time	C3B9
-		.sys_time	C3B9
-		.int_0x40	C3BB
-		.int_0x48	C3CB
-		.int_0x50	C3DB
-		.int_0x58	C3EB
-		.int_0x60	C3FB
-		.randhi	C40B
-		.randlo	C40C
+		__cpu	C3B3
+		.mode	C3B4
+		__io_out	C3B5
+		__io_in	C3B6
+		__io_status	C3B7
+		.vbl_done	C3B8
+		__current_bank	C3B9
+		_sys_time	C3BA
+		.sys_time	C3BA
+		.int_0x40	C3BC
+		.int_0x48	C3CC
+		.int_0x50	C3DC
+		.int_0x58	C3EC
+		.int_0x60	C3FC
+		.randhi	C40C
+		.randlo	C40D
 AREA _HEAP
 	RADIX HEX
-	BASE C40D
+	BASE C40E
 	SIZE 0000
 	ATTRIB REL CON
 	GLOBALS
-		_malloc_heap_start	C40D
+		_malloc_heap_start	C40E
 AREA _OVERLAY
 	RADIX HEX
-	BASE C40D
+	BASE C40E
 	SIZE 0000
 	ATTRIB REL CON
 AREA _ISEG
 	RADIX HEX
-	BASE C40D
+	BASE C40E
 	SIZE 0000
 	ATTRIB REL CON
 AREA _BSEG
 	RADIX HEX
-	BASE C40D
+	BASE C40E
 	SIZE 0000
 	ATTRIB REL CON
 AREA _XSEG
 	RADIX HEX
-	BASE C40D
+	BASE C40E
 	SIZE 0000
 	ATTRIB REL CON
 AREA _CODE_3
@@ -501,21 +501,21 @@ AREA _CODE_1
 AREA _CODE_6
 	RADIX HEX
 	BASE 4000
-	SIZE 3CD2
+	SIZE 3D56
 	ATTRIB REL CON
 	GLOBALS
 		_bank_6_data	4000
 AREA _CODE_7
 	RADIX HEX
 	BASE 4000
-	SIZE 274C
+	SIZE 2754
 	ATTRIB REL CON
 	GLOBALS
 		_bank_7_data	4000
 AREA _CODE_5
 	RADIX HEX
 	BASE 4000
-	SIZE 00D4
+	SIZE 00DA
 	ATTRIB REL CON
 	GLOBALS
 		_tileset_bank_ptrs	4000
@@ -523,46 +523,46 @@ AREA _CODE_5
 		_sprite_bank_ptrs	4030
 		_scene_bank_ptrs	4057
 		_string_bank_ptrs	407B
-		_music_banks	40D2
+		_music_banks	40D8
 MODULES
 	FILE C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/crt0.o
 		NAME Runtime
 	FILE obj/BankData.o
-		NAME lcc83760
+		NAME lcc202320
 	FILE obj/BankManager.o
-		NAME lcc266560
+		NAME lcc131280
 	FILE obj/FadeManager.o
-		NAME lcc232760
+		NAME lcc281120
 	FILE obj/Math.o
-		NAME lcc279840
+		NAME lcc208920
 	FILE obj/MusicManager.o
-		NAME lcc196440
+		NAME lcc105760
 	FILE obj/Scene.o
-		NAME lcc254280
+		NAME lcc270280
 	FILE obj/Scene_b.o
-		NAME lcc262120
+		NAME lcc241480
 	FILE obj/ScriptRunner.o
-		NAME lcc280800
+		NAME lcc192400
 	FILE obj/ScriptRunner_b.o
-		NAME lcc231120
+		NAME lcc212840
 	FILE obj/SpriteHelpers.o
-		NAME lcc170960
+		NAME lcc155480
 	FILE obj/Stack.o
-		NAME lcc180560
+		NAME lcc219920
 	FILE obj/UI.o
-		NAME lcc137920
+		NAME lcc273640
 	FILE obj/UI_b.o
-		NAME lcc78680
+		NAME lcc136840
 	FILE obj/game.o
-		NAME lcc159880
+		NAME lcc9440
 	FILE obj/gbt_player.o
 	FILE obj/gbt_player_bank1.o
 	FILE obj/data/bank_6.o
-		NAME lcc105880
+		NAME lcc159120
 	FILE obj/data/bank_7.o
-		NAME lcc144400
+		NAME lcc117760
 	FILE obj/data/data_ptrs.o
-		NAME lcc68840
+		NAME lcc251400
 LIBRARIES
 	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE set_prop.o

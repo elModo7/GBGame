@@ -17,25 +17,25 @@ AREA .  .ABS.
 		l__LIT	0000
 		l__GSINITTAIL	0001
 		l__BSS	005B
-		l__CODE_5	0095
+		l__CODE_5	00D4
 		l__HEADER	01E1
 		s__CODE	0200
 		l__HOME	0254
 		l__BASE	0266
-		l__DATA	0310
+		l__DATA	0312
 		l__GSINIT	03B4
 		l__CODE_1	0671
-		l__CODE	130B
-		s__HOME	150B
+		l__CODE	1312
+		s__HOME	1512
 		l__CODE_4	1650
-		s__BASE	175F
-		s__LIT	19C5
-		s__GSINIT	19C5
-		l__CODE_7	1A4F
-		s__GSINITTAIL	1D79
-		s__GSFINAL	1D7A
+		s__BASE	1766
+		s__LIT	19CC
+		s__GSINIT	19CC
+		s__GSINITTAIL	1D80
+		s__GSFINAL	1D81
 		l__CODE_3	2006
-		l__CODE_6	343E
+		l__CODE_7	274C
+		l__CODE_6	3CD2
 		s__CODE_1	4000
 		s__CODE_3	4000
 		s__CODE_4	4000
@@ -44,18 +44,18 @@ AREA .  .ABS.
 		s__CODE_7	4000
 		.OAM	C000
 		s__DATA	C0A0
-		s__BSS	C3B0
-		s__HEAP	C40B
-		s__BSEG	C40B
-		s__ISEG	C40B
-		s__XSEG	C40B
-		s__OVERLAY	C40B
+		s__BSS	C3B2
+		s__HEAP	C40D
+		s__BSEG	C40D
+		s__ISEG	C40D
+		s__XSEG	C40D
+		s__OVERLAY	C40D
 		.STACK	E000
 		.refresh_OAM	FF80
 AREA _CODE
 	RADIX HEX
 	BASE 0200
-	SIZE 130B
+	SIZE 1312
 	ATTRIB REL CON
 	GLOBALS
 		_SetBankedBkgData	0200
@@ -102,23 +102,23 @@ AREA _CODE
 		_UISetTextBuffer	0C76
 		_UIDrawTextBuffer	0CB1
 		_UIDrawTextBufferChar	0CC8
-		_UISetPos	0EAA
-		_UIMoveTo	0EC3
-		_UIIsClosed	0EF2
-		_UIOnInteract	0F3C
-		_UIAtDest	102B
-		_UISetColor	105A
-		_main	1077
-		_game_loop	1227
-		gbt_get_pattern_ptr	12DE
-		_gbt_play	12FB
-		_gbt_pause	13B6
-		_gbt_loop	13C2
-		_gbt_stop	13C9
-		_gbt_enable_channels	13D4
-		_gbt_update	13DB
-		_rand	14E0
-		_randw	14E0
+		_UISetPos	0EB1
+		_UIMoveTo	0ECA
+		_UIIsClosed	0EF9
+		_UIOnInteract	0F43
+		_UIAtDest	1032
+		_UISetColor	1061
+		_main	107E
+		_game_loop	122E
+		gbt_get_pattern_ptr	12E5
+		_gbt_play	1302
+		_gbt_pause	13BD
+		_gbt_loop	13C9
+		_gbt_stop	13D0
+		_gbt_enable_channels	13DB
+		_gbt_update	13E2
+		_rand	14E7
+		_randw	14E7
 AREA _HEADER
 	RADIX HEX
 	BASE 0000
@@ -128,118 +128,118 @@ AREA _HEADER
 		_exit	01D2
 AREA _HOME
 	RADIX HEX
-	BASE 150B
+	BASE 1512
 	SIZE 0254
 	ATTRIB REL CON
 	GLOBALS
-		.set_mode	150B
-		.remove_VBL	151B
-		.remove_LCD	1521
-		.remove_TIM	1527
-		.remove_SIO	152D
-		.remove_JOY	1533
-		.add_VBL	1539
-		.add_LCD	153F
-		.add_TIM	1545
-		.add_SIO	154B
-		.add_JOY	1551
-		.remove_int	1557
-		.add_int	1577
-		.wait_vbl_done	1593
-		_wait_vbl_done	1593
-		_display_off	15AA
-		.display_off	15AA
-		.serial_IO	15CB
-		_mode	15FA
-		_get_mode	1603
-		_enable_interrupts	1608
-		_disable_interrupts	160A
-		_reset	160C
-		.reset	160C
-		_set_interrupts	1612
-		_remove_VBL	161D
-		_remove_LCD	1628
-		_remove_TIM	1633
-		_remove_SIO	163E
-		_remove_JOY	1649
-		_add_VBL	1654
-		_add_LCD	165F
-		_add_TIM	166A
-		_add_SIO	1675
-		_add_JOY	1680
-		_clock	168B
-		__printTStates	1694
-		banked_call	1695
-		banked_ret	16AE
-		_strcat	16B7
-		_strlen	1728
+		.set_mode	1512
+		.remove_VBL	1522
+		.remove_LCD	1528
+		.remove_TIM	152E
+		.remove_SIO	1534
+		.remove_JOY	153A
+		.add_VBL	1540
+		.add_LCD	1546
+		.add_TIM	154C
+		.add_SIO	1552
+		.add_JOY	1558
+		.remove_int	155E
+		.add_int	157E
+		.wait_vbl_done	159A
+		_wait_vbl_done	159A
+		_display_off	15B1
+		.display_off	15B1
+		.serial_IO	15D2
+		_mode	1601
+		_get_mode	160A
+		_enable_interrupts	160F
+		_disable_interrupts	1611
+		_reset	1613
+		.reset	1613
+		_set_interrupts	1619
+		_remove_VBL	1624
+		_remove_LCD	162F
+		_remove_TIM	163A
+		_remove_SIO	1645
+		_remove_JOY	1650
+		_add_VBL	165B
+		_add_LCD	1666
+		_add_TIM	1671
+		_add_SIO	167C
+		_add_JOY	1687
+		_clock	1692
+		__printTStates	169B
+		banked_call	169C
+		banked_ret	16B5
+		_strcat	16BE
+		_strlen	172F
 AREA _BASE
 	RADIX HEX
-	BASE 175F
+	BASE 1766
 	SIZE 0266
 	ATTRIB REL CON
 	GLOBALS
-		.set_sprite_prop	175F
-		_set_sprite_prop	176C
-		_initrand	1777
-		.initrand	1779
-		_strcpy	1782
-		_memcpy	1794
-		_strcmp	17B4
-		.mv_sprite	17D8
-		_move_sprite	17E7
-		__mulschar	17F4
-		__muluchar	17F4
-		__mulsint	1800
-		__muluint	1800
-		.mulu16	1814
-		.mul16	1814
-		_set_win_tiles	182A
-		_set_win_data	183E
-		_set_bkg_data	183E
-		_set_sprite_data	188B
-		.padup	18BA
-		_waitpadup	18BA
-		.jpad	18CA
-		.wait_pad	18F7
-		_joypad	18FE
-		_waitpad	1903
-		.set_sprite_tile	190D
-		_set_sprite_tile	191A
-		.copy_vram	1925
-		_get_data	1934
-		_set_data	1934
-		_set_bkg_tiles	1947
-		.set_xy_wtt	195B
-		.set_xy_btt	196C
-		.set_xy_tt	197B
-		_set_tiles	19AC
+		.set_sprite_prop	1766
+		_set_sprite_prop	1773
+		_initrand	177E
+		.initrand	1780
+		_strcpy	1789
+		_memcpy	179B
+		_strcmp	17BB
+		.mv_sprite	17DF
+		_move_sprite	17EE
+		__mulschar	17FB
+		__muluchar	17FB
+		__mulsint	1807
+		__muluint	1807
+		.mulu16	181B
+		.mul16	181B
+		_set_win_tiles	1831
+		_set_win_data	1845
+		_set_bkg_data	1845
+		_set_sprite_data	1892
+		.padup	18C1
+		_waitpadup	18C1
+		.jpad	18D1
+		.wait_pad	18FE
+		_joypad	1905
+		_waitpad	190A
+		.set_sprite_tile	1914
+		_set_sprite_tile	1921
+		.copy_vram	192C
+		_get_data	193B
+		_set_data	193B
+		_set_bkg_tiles	194E
+		.set_xy_wtt	1962
+		.set_xy_btt	1973
+		.set_xy_tt	1982
+		_set_tiles	19B3
 AREA _LIT
 	RADIX HEX
-	BASE 19C5
+	BASE 19CC
 	SIZE 0000
 	ATTRIB REL CON
 AREA _GSINIT
 	RADIX HEX
-	BASE 19C5
+	BASE 19CC
 	SIZE 03B4
 	ATTRIB REL CON
 	GLOBALS
-		gsinit	19C5
+		gsinit	19CC
 AREA _GSINITTAIL
 	RADIX HEX
-	BASE 1D79
+	BASE 1D80
 	SIZE 0001
 	ATTRIB REL CON
 AREA _GSFINAL
 	RADIX HEX
-	BASE 1D7A
+	BASE 1D81
 	SIZE 0000
 	ATTRIB REL CON
 AREA _DATA
 	RADIX HEX
 	BASE C0A0
-	SIZE 0310
+	SIZE 0312
 	ATTRIB REL CON
 	GLOBALS
 		_bank_stack	C0A0
@@ -335,51 +335,51 @@ AREA _DATA
 		_script_variables	C3AC
 AREA _BSS
 	RADIX HEX
-	BASE C3B0
+	BASE C3B2
 	SIZE 005B
 	ATTRIB REL CON
 	GLOBALS
-		__cpu	C3B0
-		.mode	C3B1
-		__io_out	C3B2
-		__io_in	C3B3
-		__io_status	C3B4
-		.vbl_done	C3B5
-		__current_bank	C3B6
-		_sys_time	C3B7
-		.sys_time	C3B7
-		.int_0x40	C3B9
-		.int_0x48	C3C9
-		.int_0x50	C3D9
-		.int_0x58	C3E9
-		.int_0x60	C3F9
-		.randhi	C409
-		.randlo	C40A
+		__cpu	C3B2
+		.mode	C3B3
+		__io_out	C3B4
+		__io_in	C3B5
+		__io_status	C3B6
+		.vbl_done	C3B7
+		__current_bank	C3B8
+		_sys_time	C3B9
+		.sys_time	C3B9
+		.int_0x40	C3BB
+		.int_0x48	C3CB
+		.int_0x50	C3DB
+		.int_0x58	C3EB
+		.int_0x60	C3FB
+		.randhi	C40B
+		.randlo	C40C
 AREA _HEAP
 	RADIX HEX
-	BASE C40B
+	BASE C40D
 	SIZE 0000
 	ATTRIB REL CON
 	GLOBALS
-		_malloc_heap_start	C40B
+		_malloc_heap_start	C40D
 AREA _OVERLAY
 	RADIX HEX
-	BASE C40B
+	BASE C40D
 	SIZE 0000
 	ATTRIB REL CON
 AREA _ISEG
 	RADIX HEX
-	BASE C40B
+	BASE C40D
 	SIZE 0000
 	ATTRIB REL CON
 AREA _BSEG
 	RADIX HEX
-	BASE C40B
+	BASE C40D
 	SIZE 0000
 	ATTRIB REL CON
 AREA _XSEG
 	RADIX HEX
-	BASE C40B
+	BASE C40D
 	SIZE 0000
 	ATTRIB REL CON
 AREA _CODE_3
@@ -501,96 +501,96 @@ AREA _CODE_1
 AREA _CODE_6
 	RADIX HEX
 	BASE 4000
-	SIZE 343E
+	SIZE 3CD2
 	ATTRIB REL CON
 	GLOBALS
 		_bank_6_data	4000
 AREA _CODE_7
 	RADIX HEX
 	BASE 4000
-	SIZE 1A4F
+	SIZE 274C
 	ATTRIB REL CON
 	GLOBALS
 		_bank_7_data	4000
 AREA _CODE_5
 	RADIX HEX
 	BASE 4000
-	SIZE 0095
+	SIZE 00D4
 	ATTRIB REL CON
 	GLOBALS
 		_tileset_bank_ptrs	4000
-		_background_bank_ptrs	4009
-		_sprite_bank_ptrs	401E
-		_scene_bank_ptrs	403F
-		_string_bank_ptrs	4054
-		_music_banks	4093
+		_background_bank_ptrs	400C
+		_sprite_bank_ptrs	4030
+		_scene_bank_ptrs	4057
+		_string_bank_ptrs	407B
+		_music_banks	40D2
 MODULES
-	FILE C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/crt0.o
+	FILE C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/crt0.o
 		NAME Runtime
 	FILE obj/BankData.o
-		NAME lcc89160
+		NAME lcc83760
 	FILE obj/BankManager.o
-		NAME lcc58840
+		NAME lcc266560
 	FILE obj/FadeManager.o
-		NAME lcc101680
+		NAME lcc232760
 	FILE obj/Math.o
-		NAME lcc63880
+		NAME lcc279840
 	FILE obj/MusicManager.o
-		NAME lcc130080
+		NAME lcc196440
 	FILE obj/Scene.o
-		NAME lcc81240
+		NAME lcc254280
 	FILE obj/Scene_b.o
-		NAME lcc47800
+		NAME lcc262120
 	FILE obj/ScriptRunner.o
-		NAME lcc84280
+		NAME lcc280800
 	FILE obj/ScriptRunner_b.o
-		NAME lcc39840
+		NAME lcc231120
 	FILE obj/SpriteHelpers.o
-		NAME lcc127480
+		NAME lcc170960
 	FILE obj/Stack.o
-		NAME lcc78200
+		NAME lcc180560
 	FILE obj/UI.o
-		NAME lcc92680
+		NAME lcc137920
 	FILE obj/UI_b.o
-		NAME lcc21720
+		NAME lcc78680
 	FILE obj/game.o
-		NAME lcc142800
+		NAME lcc159880
 	FILE obj/gbt_player.o
 	FILE obj/gbt_player_bank1.o
 	FILE obj/data/bank_6.o
-		NAME lcc31520
+		NAME lcc105880
 	FILE obj/data/bank_7.o
-		NAME lcc139720
+		NAME lcc144400
 	FILE obj/data/data_ptrs.o
-		NAME lcc31000
+		NAME lcc68840
 LIBRARIES
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE set_prop.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE rand.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
 		MODULE asm_string.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE mv_spr.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
 		MODULE mul.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE set_wi_t.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE set_data.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE pad.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE set_spr.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
 		MODULE strcat.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
 		MODULE strlen.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE cpy_data.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE set_bk_t.o
-	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
+	LIBRARY C:\Users\VMARTI~1\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE set_xy_t.o
 USERBASEDEF
 	_CODE=0x0200

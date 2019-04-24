@@ -17,13 +17,17 @@ AREA .  .ABS.
 		l__LIT	0000
 		l__GSINITTAIL	0001
 		l__BSS	005B
-		l__CODE_5	00F5
+		l__CODE_5	00EC
+		l__CODE_11	0105
+		l__CODE_9	0112
+		l__CODE_10	0114
 		l__HEADER	01E1
 		s__CODE	0200
 		l__HOME	0254
 		l__BASE	0266
-		l__DATA	0314
-		l__GSINIT	03B4
+		l__DATA	0330
+		l__GSINIT	0440
+		l__CODE_12	04DA
 		l__CODE_1	0671
 		l__CODE	1312
 		s__HOME	1512
@@ -31,25 +35,29 @@ AREA .  .ABS.
 		s__BASE	1766
 		s__LIT	19CC
 		s__GSINIT	19CC
-		s__GSINITTAIL	1D80
-		s__GSFINAL	1D81
+		s__GSINITTAIL	1E0C
+		s__GSFINAL	1E0D
 		l__CODE_3	2006
-		l__CODE_7	2C86
-		l__CODE_6	3E73
+		l__CODE_7	2C6A
+		l__CODE_6	3DFB
+		s__CODE_10	4000
+		s__CODE_11	4000
+		s__CODE_12	4000
 		s__CODE_1	4000
 		s__CODE_3	4000
 		s__CODE_4	4000
 		s__CODE_5	4000
 		s__CODE_6	4000
 		s__CODE_7	4000
+		s__CODE_9	4000
 		.OAM	C000
 		s__DATA	C0A0
-		s__BSS	C3B4
-		s__HEAP	C40F
-		s__BSEG	C40F
-		s__ISEG	C40F
-		s__XSEG	C40F
-		s__OVERLAY	C40F
+		s__BSS	C3D0
+		s__HEAP	C42B
+		s__BSEG	C42B
+		s__ISEG	C42B
+		s__XSEG	C42B
+		s__OVERLAY	C42B
 		.STACK	E000
 		.refresh_OAM	FF80
 AREA _CODE
@@ -222,24 +230,24 @@ AREA _LIT
 AREA _GSINIT
 	RADIX HEX
 	BASE 19CC
-	SIZE 03B4
+	SIZE 0440
 	ATTRIB REL CON
 	GLOBALS
 		gsinit	19CC
 AREA _GSINITTAIL
 	RADIX HEX
-	BASE 1D80
+	BASE 1E0C
 	SIZE 0001
 	ATTRIB REL CON
 AREA _GSFINAL
 	RADIX HEX
-	BASE 1D81
+	BASE 1E0D
 	SIZE 0000
 	ATTRIB REL CON
 AREA _DATA
 	RADIX HEX
 	BASE C0A0
-	SIZE 0314
+	SIZE 0330
 	ATTRIB REL CON
 	GLOBALS
 		_bank_stack	C0A0
@@ -332,54 +340,58 @@ AREA _DATA
 		gbt_update_pattern_pointers	C397
 		_bank_data_ptrs	C398
 		_music_tracks	C3A8
-		_script_variables	C3AC
+		_script_variables	C3B2
+		_music_track_0_Data	C3BA
+		_music_track_1_Data	C3BE
+		_music_track_2_Data	C3C2
+		_music_track_3_Data	C3C6
 AREA _BSS
 	RADIX HEX
-	BASE C3B4
+	BASE C3D0
 	SIZE 005B
 	ATTRIB REL CON
 	GLOBALS
-		__cpu	C3B4
-		.mode	C3B5
-		__io_out	C3B6
-		__io_in	C3B7
-		__io_status	C3B8
-		.vbl_done	C3B9
-		__current_bank	C3BA
-		_sys_time	C3BB
-		.sys_time	C3BB
-		.int_0x40	C3BD
-		.int_0x48	C3CD
-		.int_0x50	C3DD
-		.int_0x58	C3ED
-		.int_0x60	C3FD
-		.randhi	C40D
-		.randlo	C40E
+		__cpu	C3D0
+		.mode	C3D1
+		__io_out	C3D2
+		__io_in	C3D3
+		__io_status	C3D4
+		.vbl_done	C3D5
+		__current_bank	C3D6
+		_sys_time	C3D7
+		.sys_time	C3D7
+		.int_0x40	C3D9
+		.int_0x48	C3E9
+		.int_0x50	C3F9
+		.int_0x58	C409
+		.int_0x60	C419
+		.randhi	C429
+		.randlo	C42A
 AREA _HEAP
 	RADIX HEX
-	BASE C40F
+	BASE C42B
 	SIZE 0000
 	ATTRIB REL CON
 	GLOBALS
-		_malloc_heap_start	C40F
+		_malloc_heap_start	C42B
 AREA _OVERLAY
 	RADIX HEX
-	BASE C40F
+	BASE C42B
 	SIZE 0000
 	ATTRIB REL CON
 AREA _ISEG
 	RADIX HEX
-	BASE C40F
+	BASE C42B
 	SIZE 0000
 	ATTRIB REL CON
 AREA _BSEG
 	RADIX HEX
-	BASE C40F
+	BASE C42B
 	SIZE 0000
 	ATTRIB REL CON
 AREA _XSEG
 	RADIX HEX
-	BASE C40F
+	BASE C42B
 	SIZE 0000
 	ATTRIB REL CON
 AREA _CODE_3
@@ -501,21 +513,21 @@ AREA _CODE_1
 AREA _CODE_6
 	RADIX HEX
 	BASE 4000
-	SIZE 3E73
+	SIZE 3DFB
 	ATTRIB REL CON
 	GLOBALS
 		_bank_6_data	4000
 AREA _CODE_7
 	RADIX HEX
 	BASE 4000
-	SIZE 2C86
+	SIZE 2C6A
 	ATTRIB REL CON
 	GLOBALS
 		_bank_7_data	4000
 AREA _CODE_5
 	RADIX HEX
 	BASE 4000
-	SIZE 00F5
+	SIZE 00EC
 	ATTRIB REL CON
 	GLOBALS
 		_tileset_bank_ptrs	4000
@@ -523,46 +535,85 @@ AREA _CODE_5
 		_sprite_bank_ptrs	4036
 		_scene_bank_ptrs	4063
 		_string_bank_ptrs	408A
-		_music_banks	40F3
+		_music_banks	40E7
+AREA _CODE_9
+	RADIX HEX
+	BASE 4000
+	SIZE 0112
+	ATTRIB REL CON
+	GLOBALS
+		_music_track_00	4000
+AREA _CODE_10
+	RADIX HEX
+	BASE 4000
+	SIZE 0114
+	ATTRIB REL CON
+	GLOBALS
+		_music_track_10	4000
+AREA _CODE_11
+	RADIX HEX
+	BASE 4000
+	SIZE 0105
+	ATTRIB REL CON
+	GLOBALS
+		_music_track_20	4000
+AREA _CODE_12
+	RADIX HEX
+	BASE 4000
+	SIZE 04DA
+	ATTRIB REL CON
+	GLOBALS
+		_music_track_30	4000
+		_music_track_31	4118
+		_music_track_32	4262
+		_music_track_33	43AB
 MODULES
 	FILE C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/crt0.o
 		NAME Runtime
 	FILE obj/BankData.o
-		NAME lcc91160
+		NAME lcc88960
 	FILE obj/BankManager.o
-		NAME lcc48400
+		NAME lcc56520
 	FILE obj/FadeManager.o
-		NAME lcc27000
+		NAME lcc68560
 	FILE obj/Math.o
-		NAME lcc102800
+		NAME lcc93080
 	FILE obj/MusicManager.o
-		NAME lcc69120
+		NAME lcc42960
 	FILE obj/Scene.o
-		NAME lcc141000
+		NAME lcc112600
 	FILE obj/Scene_b.o
-		NAME lcc59800
+		NAME lcc27120
 	FILE obj/ScriptRunner.o
-		NAME lcc62160
+		NAME lcc116600
 	FILE obj/ScriptRunner_b.o
-		NAME lcc86200
+		NAME lcc102520
 	FILE obj/SpriteHelpers.o
-		NAME lcc128320
+		NAME lcc53200
 	FILE obj/Stack.o
-		NAME lcc60240
+		NAME lcc46040
 	FILE obj/UI.o
-		NAME lcc139480
+		NAME lcc122000
 	FILE obj/UI_b.o
-		NAME lcc140720
+		NAME lcc72560
 	FILE obj/game.o
-		NAME lcc54280
+		NAME lcc60920
 	FILE obj/gbt_player.o
 	FILE obj/gbt_player_bank1.o
 	FILE obj/data/bank_6.o
-		NAME lcc21520
+		NAME lcc54040
 	FILE obj/data/bank_7.o
-		NAME lcc141720
+		NAME lcc119280
 	FILE obj/data/data_ptrs.o
-		NAME lcc69760
+		NAME lcc75480
+	FILE obj/music/music_track_0.o
+		NAME lcc61080
+	FILE obj/music/music_track_1.o
+		NAME lcc115120
+	FILE obj/music/music_track_2.o
+		NAME lcc47960
+	FILE obj/music/music_track_3.o
+		NAME lcc81720
 LIBRARIES
 	LIBRARY C:\Users\victo\AppData\Local\Temp/_gbs/gbdk/lib/small/asxxxx/gb/gb.lib
 		MODULE set_prop.o
